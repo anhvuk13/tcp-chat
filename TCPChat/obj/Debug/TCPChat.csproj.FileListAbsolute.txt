@@ -1,4 +1,3 @@
-C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Debug\TCPChat.csprojAssemblyReference.cache
 C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Debug\TCPChat.MainForm.resources
 C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Debug\TCPChat.ClientForm.resources
 C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Debug\TCPChat.Properties.Resources.resources

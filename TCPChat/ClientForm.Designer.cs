@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnSend);
             this.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.Name = "ClientForm";
-            this.Text = "TCPChat_Bai04_Client";
+            this.Text = "Anonymous";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
             this.Load += new System.EventHandler(this.ClientForm_Load);
             this.ResumeLayout(false);

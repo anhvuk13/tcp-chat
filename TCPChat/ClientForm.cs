@@ -68,7 +68,8 @@ namespace TCPChat
                 this.Close();
                 return;
             }
-            else MessageBox.Show($"{res} is your username.", "Success");
+            MessageBox.Show($"{res} is your username.", "Success");
+            this.Text = res;
 
             thread = new Thread(o => ReceiveData((TcpClient)o));
             thread.Start(client);

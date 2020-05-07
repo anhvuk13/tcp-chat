@@ -1,0 +1,10 @@
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\bin\Release\TCPChat.exe.config
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\bin\Release\TCPChat.exe
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\bin\Release\TCPChat.pdb
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.MainForm.resources
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.ClientForm.resources
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.Properties.Resources.resources
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.csproj.GenerateResource.cache
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.csproj.CoreCompileInputs.cache
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.exe
+C:\Users\anvut\Downloads\Compressed\18520401-TranAnhVu\Lab03\TCPChat\obj\Release\TCPChat.pdb

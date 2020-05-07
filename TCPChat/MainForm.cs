@@ -94,7 +94,7 @@ namespace TCPChat
                 }
                 buffer = Encoding.UTF8.GetBytes(username);
                 stream.Write(buffer, 0, buffer.Length);
-                broadcast($"{username} has joined the conversation.");
+                broadcast($">>> {username} has joined the conversation.");
 
                 lock (_lock) clientsList.Add(username, client);
 
@@ -109,10 +109,10 @@ namespace TCPChat
             }));
         }
 
-        public void clientsHandling(string id)
+        public void clientsHandling(string username)
         {
             TcpClient client;
-            lock (_lock) client = clientsList[id];
+            lock (_lock) client = clientsList[username];
             while (true)
             {
                 int bytesCount = 0;
@@ -125,14 +125,14 @@ namespace TCPChat
                 if (bytesCount == 0) break;
                 
                 string data = Encoding.UTF8.GetString(buffer, 0, bytesCount);
-                broadcast($"{id}: {data}");
+                broadcast($"{username}: {data}");
             }
-            broadcast($"{id} has left the conversation.");
+            broadcast($">>> {username} has left the conversation.");
 
-            lock (_lock) clientsList.Remove(id);
+            lock (_lock) clientsList.Remove(username);
             client.Client.Shutdown(SocketShutdown.Both);
             client.Close();
-            clientsList.Remove(id);
+            clientsList.Remove(username);
         }
 
         public void broadcast(string data)
