@@ -8,7 +8,7 @@ using System.Windows.Forms;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
 
-namespace Lab03
+namespace TCPChat
 {
     public partial class MainForm : Form
     {
@@ -94,6 +94,7 @@ namespace Lab03
                 }
                 buffer = Encoding.UTF8.GetBytes(username);
                 stream.Write(buffer, 0, buffer.Length);
+                broadcast($"{username} has joined the conversation.");
 
                 lock (_lock) clientsList.Add(username, client);
 
@@ -126,6 +127,7 @@ namespace Lab03
                 string data = Encoding.UTF8.GetString(buffer, 0, bytesCount);
                 broadcast($"{id}: {data}");
             }
+            broadcast($"{id} has left the conversation.");
 
             lock (_lock) clientsList.Remove(id);
             client.Client.Shutdown(SocketShutdown.Both);

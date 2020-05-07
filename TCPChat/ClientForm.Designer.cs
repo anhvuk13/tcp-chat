@@ -1,4 +1,4 @@
-﻿namespace Lab03
+﻿namespace TCPChat
 {
     partial class ClientForm
     {
@@ -110,9 +110,9 @@
             this.Controls.Add(this.btnSend);
             this.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.Name = "ClientForm";
-            this.Text = "Lab03_Bai04_Client";
+            this.Text = "TCPChat_Bai04_Client";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ClientForm_FormClosing);
-            this.Load += new System.EventHandler(this.Lab03_Bai04_Client_Load);
+            this.Load += new System.EventHandler(this.ClientForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

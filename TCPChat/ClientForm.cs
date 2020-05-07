@@ -5,7 +5,7 @@ using System.Threading;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Lab03
+namespace TCPChat
 {
     public partial class ClientForm : Form
     {
@@ -24,7 +24,7 @@ namespace Lab03
             this.joinPort = joinPort;
         }
 
-        private void Lab03_Bai04_Client_Load(object sender, EventArgs e)
+        private void ClientForm_Load(object sender, EventArgs e)
         {
             string username = joinUsername;
             IPAddress ip = null;
@@ -123,14 +123,8 @@ namespace Lab03
 
         private void ClientForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (thread != null)
-            {
-                NetworkStream stream = client.GetStream();
-                byte[] buffer = Encoding.UTF8.GetBytes("I left the conversation!");
-                stream.Write(buffer, 0, buffer.Length);
-                thread.Abort();
-            }
-
+            if (thread != null) thread.Abort();
+            
             if (client != null)
             {
                 try
