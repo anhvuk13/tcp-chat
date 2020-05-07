@@ -18,7 +18,6 @@ namespace TCPChat
         public ClientForm(string joinUsername, string joinIP, string joinPort)
         {
             InitializeComponent();
-            this.ActiveControl = message;
             this.joinUsername = joinUsername;
             this.joinIP = joinIP;
             this.joinPort = joinPort;
@@ -32,7 +31,7 @@ namespace TCPChat
             if (username == "Username" || username == "") username = " ";
             try
             {
-                ip = IPAddress.Parse(joinIP);
+                ip = Dns.Resolve(joinIP).AddressList[0];
                 port = Int32.Parse(joinPort);
             }
             catch
@@ -115,6 +114,51 @@ namespace TCPChat
             {
                 btnSend.PerformClick();
             }
+        }
+
+        private void btnSend_MouseHover(object sender, EventArgs e)
+        {
+            MainForm.btnMouseHover(btnSend);
+        }
+
+        private void btnSend_MouseLeave(object sender, EventArgs e)
+        {
+            MainForm.btnMouseLeave(btnSend);
+        }
+
+        private void btnSend_MouseDown(object sender, MouseEventArgs e)
+        {
+            MainForm.btnMouseDown(btnSend);
+        }
+
+        private void btnClear_MouseHover(object sender, EventArgs e)
+        {
+            MainForm.btnMouseHover(btnClear);
+        }
+
+        private void btnClear_MouseLeave(object sender, EventArgs e)
+        {
+            MainForm.btnMouseLeave(btnClear);
+        }
+
+        private void btnClear_MouseDown(object sender, MouseEventArgs e)
+        {
+            MainForm.btnMouseDown(btnClear);
+        }
+
+        private void btnExit_MouseHover(object sender, EventArgs e)
+        {
+            MainForm.btnMouseHover(btnExit);
+        }
+
+        private void btnExit_MouseLeave(object sender, EventArgs e)
+        {
+            MainForm.btnMouseLeave(btnExit);
+        }
+
+        private void btnExit_MouseDown(object sender, MouseEventArgs e)
+        {
+            MainForm.btnMouseDown(btnExit);
         }
 
         private void btnExit_Click(object sender, EventArgs e)

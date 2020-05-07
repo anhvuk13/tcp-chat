@@ -7,11 +7,30 @@ using System.Text;
 using System.Windows.Forms;
 using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
+using System.Drawing;
 
 namespace TCPChat
 {
     public partial class MainForm : Form
     {
+        public static void btnMouseHover(Button btn)
+        {
+            btn.BackColor = Color.Navy;
+            btn.ForeColor = Color.White;
+        }
+
+        public static void btnMouseLeave(Button btn)
+        {
+            btn.BackColor = Color.Black;
+            btn.ForeColor = Color.DeepSkyBlue;
+        }
+
+        public static void btnMouseDown(Button btn)
+        {
+            btn.BackColor = Color.LightSkyBlue;
+            btn.ForeColor = Color.Black;
+        }
+
         private readonly object _lock = new object();
         private readonly Dictionary<string, TcpClient> clientsList = new Dictionary<string, TcpClient>();
         private Thread thread = null;
@@ -37,6 +56,7 @@ namespace TCPChat
         //  server section
         private void btnServer_Click(object sender, EventArgs e)
         {
+            btnServer.Enabled = false;
             thread = new Thread(serverThread);
             thread.Start();
         }
@@ -61,12 +81,7 @@ namespace TCPChat
             }
 
             MessageBox.Show($"Successfully host a conversation at port {port}.", "Success");
-            btnServer.Invoke(new MethodInvoker(delegate ()
-            {
-                btnServer.Enabled = false;
-                btnServer.Text = $"Hosting at {port}";
-            })); 
-
+           
             while (Thread.CurrentThread.IsAlive)
             {
                 clientsCount++;
@@ -152,6 +167,52 @@ namespace TCPChat
         private void btnClient_Click(object sender, EventArgs e)
         {
             (new ClientForm(joinUsername.Text, joinIP.Text, joinPort.Text)).Show();
+        }
+
+        // Effect
+        private void btnServer_MouseHover(object sender, EventArgs e)
+        {
+            btnMouseHover(btnServer);
+        }
+
+        private void btnServer_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouseLeave(btnServer);
+        }
+
+        private void btnServer_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnMouseDown(btnServer);
+        }
+
+        private void btnClient_MouseHover(object sender, EventArgs e)
+        {
+            btnMouseHover(btnClient);
+        }
+
+        private void btnClient_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouseLeave(btnClient);
+        }
+
+        private void btnClient_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnMouseDown(btnClient);
+        }
+
+        private void btnExit_MouseHover(object sender, EventArgs e)
+        {
+            btnMouseHover(btnExit);
+        }
+
+        private void btnExit_MouseLeave(object sender, EventArgs e)
+        {
+            btnMouseLeave(btnExit);
+        }
+
+        private void btnExit_MouseDown(object sender, MouseEventArgs e)
+        {
+            btnMouseDown(btnExit);
         }
     }
 }
